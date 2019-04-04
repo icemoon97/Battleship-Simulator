@@ -4,4 +4,4 @@ just a small personal project to try to simulate/evaluate different battleship a
 
 game is currently set up with normal battleship rules, but grid size, number of ships, sizes of ships etc can be changed
 
-to test out your own algorithm, just add a new method to main.
+to make or test out your own algorithm, just add a new static method to TargetingAlgorithms.java
