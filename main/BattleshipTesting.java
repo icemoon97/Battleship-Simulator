@@ -1,12 +1,13 @@
 package main;
 
 import java.awt.Point;
+import java.util.Arrays;
 import java.util.Random;
 
 public class BattleshipTesting {
 	public static void main(String[] args) {
-		int trials = 1000;
-		int sum = 0;
+		int trials = 500;
+		int[] record = new int[trials];
 		for (int i = 0; i < trials; i++) {
 			Game game = new Game(10);
 			Random rand = new Random();
@@ -16,13 +17,20 @@ public class BattleshipTesting {
 			//TargetingAlgorithms.randomAlgorithm(game);
 			//TargetingAlgorithms.basicHuntAndSink(game, rand);
 			TargetingAlgorithms.checkerboardHuntAndSink(game, rand);
-			
+
 			//printBoard(game);
-			
-			sum += game.getTurns();
+
+			record[i] = game.getTurns();
 			System.out.println("Sunk all ships in " + game.getTurns() + " turns");
 		}
+		int sum = 0;
+		for (int n: record) {
+			sum += n;
+		}
+		Arrays.sort(record);
 		System.out.println("Average turns to win: " + (double)sum / trials);
+		System.out.println("Best game: " + record[0] + " turns");
+		System.out.println("Worst game: " + record[record.length - 1] + " turns");
 	}
 
 	public static void printBoard(Game game) {
