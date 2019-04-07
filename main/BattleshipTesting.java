@@ -2,21 +2,22 @@ package main;
 
 import java.awt.Point;
 import java.util.Arrays;
-import java.util.Random;
+import algorithms.*;
 
 public class BattleshipTesting {
 	public static void main(String[] args) {
-		int trials = 500;
+		int trials = 1000;
 		int[] record = new int[trials];
 		for (int i = 0; i < trials; i++) {
 			Game game = new Game(10);
-			Random rand = new Random();
 
-			PlacingAlgorithms.randomPlacement(game, rand);
+			PlacingAlgorithm placeAlgo = new RandomPlacement(game);
+			placeAlgo.run();
 
-			//TargetingAlgorithms.randomAlgorithm(game);
-			//TargetingAlgorithms.basicHuntAndSink(game, rand);
-			TargetingAlgorithms.checkerboardHuntAndSink(game, rand);
+			//TargetingAlgorithm targetAlgo = new RandomTargeting(game);
+			//TargetingAlgorithm targetAlgo = new BasicHuntAndSink(game);
+			TargetingAlgorithm targetAlgo = new CheckerboardHuntAndSink(game);
+			targetAlgo.run();
 
 			//printBoard(game);
 
