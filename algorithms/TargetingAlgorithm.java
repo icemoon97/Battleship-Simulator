@@ -2,10 +2,17 @@ package algorithms;
 
 import main.Game;
 
-public interface TargetingAlgorithm {
-	public void nextMove();
-	public void run();
-	public void setGame(Game game);
-	public Game getGame();
+public abstract class TargetingAlgorithm {
+	protected Game game;
+	
+	public abstract void nextMove();
+	public abstract void run();
+	
+	public void setGame(Game game) {
+		this.game = game;
+	}
+	
+	public Game getGame() {
+		return game;
+	}
 }
-

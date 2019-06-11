@@ -7,8 +7,7 @@ import java.util.Random;
 import main.Game;
 import main.Ship;
 
-public class BetterProbabilityTargeting implements TargetingAlgorithm {
-	private Game game;
+public class BetterProbabilityTargeting extends TargetingAlgorithm {
 	private Random rand;
 	private int trialsPerMove; //number of possible configurations generated per move. 
 	//higher values are more accurate/make a better algorithm, but require more calculations
@@ -168,18 +167,8 @@ public class BetterProbabilityTargeting implements TargetingAlgorithm {
 		}
 	}
 
-	@Override
-	public void setGame(Game game) {
-		this.game = game;
-	}
-
 	//sets trailsPerMove
 	public void setTrials(int trials) {
 		trialsPerMove = trials;
-	}
-
-	@Override
-	public Game getGame() {
-		return game;
 	}
 }

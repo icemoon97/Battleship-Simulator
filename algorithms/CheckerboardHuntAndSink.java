@@ -5,8 +5,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import main.Game;
 
-public class CheckerboardHuntAndSink implements TargetingAlgorithm{
-	private Game game;
+public class CheckerboardHuntAndSink extends TargetingAlgorithm {
 	private ArrayList<Point> queue;
 	private Random rand;
 
@@ -55,16 +54,5 @@ public class CheckerboardHuntAndSink implements TargetingAlgorithm{
 		while (!game.checkVictory()) {
 			nextMove();
 		}
-	}
-
-	@Override
-	public void setGame(Game game) {
-		queue.clear();
-		this.game = game;
-	}
-
-	@Override
-	public Game getGame() {
-		return game;
 	}
 }

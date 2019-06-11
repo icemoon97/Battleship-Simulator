@@ -7,8 +7,7 @@ import java.util.Random;
 import main.Game;
 import main.Ship;
 
-public class ProbabilityTargeting implements TargetingAlgorithm{
-	private Game game;
+public class ProbabilityTargeting extends TargetingAlgorithm {
 	private Random rand;
 	private ArrayList<Point> queue;
 	private int trialsPerMove; //number of possible configurations generated per move. 
@@ -100,20 +99,9 @@ public class ProbabilityTargeting implements TargetingAlgorithm{
 			nextMove();
 		}
 	}
-
-	@Override
-	public void setGame(Game game) {
-		queue.clear();
-		this.game = game;
-	}
 	
 	//sets trailsPerMove
 	public void setTrials(int trials) {
 		trialsPerMove = trials;
-	}
-
-	@Override
-	public Game getGame() {
-		return game;
 	}
 }

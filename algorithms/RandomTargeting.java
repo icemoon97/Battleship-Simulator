@@ -5,8 +5,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import main.Game;
 
-public class RandomTargeting implements TargetingAlgorithm {
-	private Game game;
+public class RandomTargeting extends TargetingAlgorithm {
 	private Random rand;
 	private ArrayList<Point> available;
 
@@ -38,17 +37,5 @@ public class RandomTargeting implements TargetingAlgorithm {
 			nextMove();
 		}
 	}
-
-	@Override
-	public void setGame(Game game) {
-		this.game = game;
-		available = game.getAvailablePoints();
-	}
-
-	@Override
-	public Game getGame() {
-		return game;
-	}
-
 }
 

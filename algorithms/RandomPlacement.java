@@ -5,8 +5,7 @@ import java.util.Random;
 import main.Game;
 import main.Ship;
 
-public class RandomPlacement implements PlacingAlgorithm {
-	private Game game;
+public class RandomPlacement extends PlacingAlgorithm {
 	private Random rand;
 
 	public RandomPlacement(Game game) {
@@ -39,16 +38,6 @@ public class RandomPlacement implements PlacingAlgorithm {
 			ship.place(new Point(x, y));
 		}
 		game.addShip(ship);
-	}
-	
-	@Override
-	public void setGame(Game game) {
-		this.game = game;
-	}
-
-	@Override
-	public Game getGame() {
-		return game;
 	}
 }
 
