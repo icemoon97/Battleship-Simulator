@@ -32,7 +32,7 @@ public class RandomPlacement implements PlacingAlgorithm {
 
 	//creates a new ship and adds it to the game in a legal, random location
 	private void addRandomShip(int length) {
-		Ship ship = new Ship(length, rand.nextBoolean(), new Point(-1, -1)); //dummy point
+		Ship ship = new Ship(length, rand.nextBoolean()); 
 		while (!game.isLegalLocation(ship)) {
 			int x = rand.nextInt(game.getGridSize());
 			int y = rand.nextInt(game.getGridSize());

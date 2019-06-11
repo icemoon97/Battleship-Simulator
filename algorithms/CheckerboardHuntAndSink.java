@@ -30,7 +30,7 @@ public class CheckerboardHuntAndSink implements TargetingAlgorithm{
 			if (queue.size() > 0) {
 				guess = queue.get(0);
 				queue.remove(0);
-			} else { //if there is nothing in the queue, a random point is picked
+			} else { //if there is nothing in the queue, a random point on checkerboard is picked
 				ArrayList<Point> available = game.getAvailablePoints();
 				for (int i = available.size() - 1; i >= 0; i--) { 
 					if (available.get(i).x % 2 != available.get(i).y % 2) { //removes any points not on checkerboard

@@ -41,8 +41,8 @@ public class RandomTargeting implements TargetingAlgorithm {
 
 	@Override
 	public void setGame(Game game) {
-		available.clear();
 		this.game = game;
+		available = game.getAvailablePoints();
 	}
 
 	@Override

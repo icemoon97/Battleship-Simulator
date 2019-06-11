@@ -18,7 +18,7 @@ public class Ship {
 	}
 	
 	public Ship(int size, boolean orientation) {
-		this(size, orientation, new Point(0, 0));
+		this(size, orientation, new Point(-1, -1));
 	}
 	
 	public void place(Point location) {
@@ -61,11 +61,15 @@ public class Ship {
 		return orientation;
 	}
 	
-	public int getSize() {
+	public int size() {
 		return size;
 	}
 	
 	public String toString() {
-		return "[Ship: " + getPoints() + "]";
+		if (orientation) {
+			return "[Ship: Length=" + size + ", V, Location=" + getPoints() + "]";
+		} else {
+			return "[Ship: Length=" + size + ", H, Location=" + getPoints() + "]";
+		}
 	}
 }
