@@ -1,7 +1,7 @@
 # Battleship-Simulator
 
-just a small personal project to try to simulate/evaluate different battleship algorithms
+Just a small personal project to try to simulate/evaluate different battleship algorithms
 
-game is currently set up with normal battleship rules, but grid size, number of ships, sizes of ships etc can be changed
+All algorithms and graphics are currently set up with normal battleship rules, game and ships objects are step up to work with different grid sizes, numbesr of ships, sizes of ships, etc.
 
-to make or test out your own algorithm, just add a new static method to TargetingAlgorithms.java
+To make your own algorithms, just extend TargetingAlgorithm.java (for targeting algorithms) or PlacingAlgorithms.java (for placing Algorithms).
